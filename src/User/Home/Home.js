@@ -324,6 +324,8 @@ document.addEventListener('DOMContentLoaded', async () => {
                 <div class="row">
                     <div class="col-md-6 text-center">
                         ${adddressTextHtml}
+                    <p><a href="tel:${hotel.contactNumber}" class="phone-link"><i class="fas fa-phone"></i> ${hotel.contactNumber}</a></p>
+
                     <p class="distance-text">
                         <i class="fas fa-ruler-combined distance-icon"></i>
                         <span class="distance-value">${hotel.distance} km</span>

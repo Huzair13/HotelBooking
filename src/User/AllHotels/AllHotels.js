@@ -213,6 +213,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                         <div class="row">
                             <div class="col-md-6 text-center">
                                 ${adddressTextHtml}
+                                <p><a href="tel:${hotel.contactNumber}" class="phone-link"><i class="fas fa-phone"></i> ${hotel.contactNumber}</a></p>
                                 <div class="hotel-amenities mt-3">
                                     <div id="hotelAmenitiesValue"
                                         class="amenities-icons d-flex justify-content-center">
