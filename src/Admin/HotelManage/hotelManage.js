@@ -274,7 +274,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         document.getElementById('overlay').style.display = 'none';
     }
 
-    init();
+    await init();
     document.getElementById('spinner').style.display = 'none'; 
     document.getElementById('overlay').style.display = 'none';
 });

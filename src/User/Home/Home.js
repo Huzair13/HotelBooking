@@ -509,12 +509,12 @@ document.addEventListener('DOMContentLoaded', async () => {
         } catch (error) {
             console.error('Error parsing JSON from sessionStorage:', error);
             sessionStorage.removeItem('hotels');
+            await init();
             document.getElementById('spinner').style.display = 'none'; 
             document.getElementById('overlay').style.display = 'none';
-            init();
         }
     } else {
-        init();
+        await init();
         document.getElementById('spinner').style.display = 'none'; 
         document.getElementById('overlay').style.display = 'none';
     }
