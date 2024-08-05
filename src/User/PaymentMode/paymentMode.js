@@ -77,6 +77,95 @@ document.addEventListener('DOMContentLoaded', () => {
         alertPlaceholder.appendChild(alert);
     }
 
+    async function sendEmail(data) {
+        const qrCode = new QRCodeStyling({
+            width: 300,
+            height: 300,
+            data: JSON.stringify(data), 
+            dotsOptions: {
+                color: "#4267b2",
+                type: "rounded"
+            },
+            backgroundOptions: {
+                color: "#e9ebee",
+            },
+            imageOptions: {
+                crossOrigin: "anonymous",
+                margin: 20,
+                imageSize: 0.4,
+                image: "https://rghuzteststorage.blob.core.windows.net/huztestcontainer/1-copy.jpg" // URL to your logo image
+            }
+        });
+    
+        qrCode.append(document.getElementById("qr-code"));
+    
+        try {
+            const blob = await qrCode.getRawData("image/png");
+            const reader = new FileReader();
+    
+            return new Promise((resolve, reject) => {
+                reader.onloadend = () => {
+                    const qrCodeDataUrl = reader.result;
+                    const emailData = {
+                        toEmail: "ahamedhuzair13@gmail.com",
+                        subject: "Booking Confirmation",
+                        body: "Dear Guest,\n Thank you for booking with Book My Stay! 🎉\n Find you booking Detail QR Below",
+                        imageUrl: qrCodeDataUrl.split(',')[1] 
+                    };
+    
+                    fetch('https://huzairhotelbookingapi.azure-api.net/Booking/api/sendEmail', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(emailData)
+                    })
+                    .then(response => {
+                        if (!response.ok) {
+                            return response.text().then(text => {
+                                throw new Error(text);
+                            });
+                        }
+                        return response.text(); 
+                    })
+                    .then(data => {
+                        console.log('Email Sent:', data);
+                        resolve(data); 
+                    })
+                    .catch(error => {
+                        console.error('Error sending email:', error);
+                        reject(error); 
+                    });
+                };
+    
+                reader.readAsDataURL(blob); 
+            });
+        } catch (error) {
+            console.error('Failed to generate QR code:', error);
+            throw error; 
+        }
+    }
+    
+    async function handleBookingResponse(response) {
+        try {
+            const data = await response.json();
+            console.log(data);
+
+            await sendEmail(data);
+
+            document.getElementById('spinner').style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
+            alert('Booking successful!');
+            window.location.href = `/User/BookingConfirmation/bookingConfirmation.html?bookingId=${data.bookingId}`;
+        } catch (error) {
+            console.error('Error:', error);
+            showAlert("An Error Occurred At Booking", 'danger');
+            showAlert(error, 'danger');
+            document.getElementById('spinner').style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
+        }
+    }
+
     document.getElementById('codButton').addEventListener('click', () => {
         document.getElementById('spinner').style.display = 'block'; 
         document.getElementById('overlay').style.display = 'block';
@@ -97,13 +186,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     paymentMode : 0
                 })
             })
-            .then(response => response.json())
-            .then(data => {
-                console.log(data)
-                document.getElementById('spinner').style.display = 'none'; 
-                document.getElementById('overlay').style.display = 'none';
-                alert('Booking successful!');
-                window.location.href = `/User/BookingConfirmation/bookingConfirmation.html?bookingId=${data.bookingId}`;
+            .then(response => {
+                if (!response.ok) {
+                    return response.text().then(text => { throw new Error(text); });
+                }
+                return handleBookingResponse(response);
             })
             .catch(error => {
                 showAlert("An Error Occured At Booking"),'danger';
@@ -138,13 +225,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     paymentMode : 1
                 })
             })
-            .then(response => response.json())
-            .then(data => {
-                console.log(data)
-                document.getElementById('spinner').style.display = 'none'; 
-                document.getElementById('overlay').style.display = 'none';
-                alert('Booking successful!');
-                window.location.href = `/User/BookingConfirmation/bookingConfirmation.html?bookingId=${data.bookingId}`;
+            .then(response => {
+                if (!response.ok) {
+                    return response.text().then(text => { throw new Error(text); });
+                }
+                return handleBookingResponse(response);
             })
             .catch(error => {
                 console.error('Error:', error)
