@@ -65,7 +65,11 @@ document.addEventListener("DOMContentLoaded", function () {
         "Fan": "fas fa-fan",
         "Geyser": "fas fa-tachometer-alt",
         "Wifi": "fas fa-wifi",
-        "Play Station": "fas fa-gamepad"
+        "Play Station": "fas fa-gamepad",
+        'Pool': "fas fa-swimming-pool",
+        'Parking': "fas fa-parking",
+        'Gym': "fas fa-dumbbell",
+        'Restaurant': "fas fa-utensils"
     };
 
     function displayAmenities(amenities) {

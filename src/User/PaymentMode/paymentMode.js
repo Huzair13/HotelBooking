@@ -143,7 +143,6 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         } catch (error) {
             console.error('Failed to generate QR code:', error);
-            throw error; 
         }
     }
     

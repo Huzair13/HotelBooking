@@ -115,14 +115,17 @@ async function fetchHotelDetails(hotelId) {
             }
 
             starRatings.innerHTML = starsHTML;
-
             const amenitiesIcons = {
                 "AC": "fas fa-snowflake",
                 "TV": "fas fa-tv",
                 "Fan": "fas fa-fan",
                 "Geyser": "fas fa-tachometer-alt",
                 "Wifi": "fas fa-wifi",
-                "Play Station": "fas fa-gamepad"
+                "Play Station": "fas fa-gamepad",
+                'Pool': "fas fa-swimming-pool",
+                'Parking': "fas fa-parking",
+                'Gym': "fas fa-dumbbell",
+                'Restaurant': "fas fa-utensils"
             };
             const amenitiesContainer = document.getElementById('hotelAmenitiesValue');
             amenitiesContainer.innerHTML = Object.keys(amenitiesIcons)
