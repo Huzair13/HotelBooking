@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     window.onload = function() {
-        history.replaceState(null, null, '/User/Home/Home.html'); 
+        history.replaceState(null, null, '/User/UserHome/userHome.html'); 
     }
 
     function showAlert(message, type) {
