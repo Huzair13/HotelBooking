@@ -395,7 +395,9 @@ function displayBooking(data) {
                 <p><strong>Discount:</strong> $${booking.discount}</p>
                 <p><strong>Final Amount:</strong> $${booking.finalAmount}</p>
                 <p><strong>Allocated Rooms:</strong> ${booking.roomNumbers ? booking.roomNumbers.join(', ') : 'Not available'}</p>
-                <p><strong>Payment Mode:</strong> ${booking.paymentMode}</p>
+                <p><strong>Payment Mode:</strong> 
+                    ${booking.paymentMode === 0 ? 'offline' : 'online'}
+                </p>
                 <p><strong>Payment Status:</strong> ${booking.isPaid ? "Completed" : "Not Completed"}</p>
                 <div class="d-flex justify-content-between flex-wrap flex-column flex-md-row"><strong>Status:</strong> <div class="${statusClass}"><span>${booking.isCancelled ? 'Cancelled' : 'Active'}</span></div></div>
                 ${cancelButton}

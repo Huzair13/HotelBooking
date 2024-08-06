@@ -423,6 +423,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const ratingValue = parseInt(document.getElementById('ratingValue').value);
         const feedback = document.getElementById('ratingFeedback').value;
         const token = localStorage.getItem('token');
+        const button = document.getElementById('submitRating');
+        const buttonText = document.getElementById('submitRatingText');
+        const spinner3 =document.getElementById('spinner4');
+
+        button.disabled = true;
+        buttonText.style.display = 'none';
+        spinner3.style.display = 'inline-block';
 
         try {
             const response = await fetch('https://huzairhotelbookingapi.azure-api.net/Rating/api/AddRating', {
@@ -453,6 +460,11 @@ document.addEventListener('DOMContentLoaded', () => {
         } catch (error) {
             console.error('Error submitting rating:', error);
         }
+        finally{
+            button.disabled = false;
+            buttonText.style.display = 'inline';
+            spinner3.style.display = 'none';
+        }
     });
 
     // Event listener for the form submission
@@ -460,6 +472,15 @@ document.addEventListener('DOMContentLoaded', () => {
         const ratingValue = (document.getElementById('ratingUpdateValue').value);
         const feedback = document.getElementById('ratingUpdateFeedback').value;
         const token = localStorage.getItem('token');
+        const button = document.getElementById('submitUpdateRating');
+        const buttonText = document.getElementById('editText');
+        const spinner3 =document.getElementById('spinner3');
+        const icon = document.getElementById('editIcon');
+
+        button.disabled = true;
+        buttonText.style.display = 'none';
+        icon.style.display ='none';
+        spinner3.style.display = 'inline-block';
 
         try {
             const response = await fetch(`https://huzairhotelbookingapi.azure-api.net/Rating/api/updateRating/${userRatingsAll.id}`, {
@@ -489,6 +510,12 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         } catch (error) {
             console.error('Error submitting rating:', error);
+        }
+        finally{
+            button.disabled = false;
+            buttonText.style.display = 'inline';
+            icon.style.display ='inline';
+            spinner3.style.display = 'none';
         }
     });
 
