@@ -245,6 +245,7 @@ async function fetchHotelDetails(hotelId) {
             // Populate reviews section
             const reviewsContainer = document.getElementById('reviewsContainer');
             reviewsContainer.innerHTML = '';
+            // <p class="review-feedback" data-full="${review.feedback}">${review.feedback.slice(0, 100)}</p>
             reviews.slice(0, 3).forEach(review => {
                 const date = new Date(review.createdAt).toLocaleDateString();
                 const time = new Date(review.createdAt).toLocaleTimeString();
@@ -252,9 +253,10 @@ async function fetchHotelDetails(hotelId) {
                 reviewElement.classList.add('review');
                 reviewElement.innerHTML = `
                     <div class="review-content">
-                        <div class="review-user">User ${review.userId}</div>
                         <div class="review-feedback">
-                            <p class="review-feedback" data-full="${review.feedback}">${review.feedback.slice(0, 100)}</p>
+                            <p class="review-feedback" data-full="${review.feedback ? review.feedback : 'No Feedback Provided'}">
+                            ${review.feedback ? review.feedback.slice(0, 100) : 'No Feedback'}
+                            </p>
                             <span class="expand-btn">Read More</span>
                         </div>
                     </div>
