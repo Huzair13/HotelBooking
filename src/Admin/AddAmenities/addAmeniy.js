@@ -38,14 +38,11 @@ document.addEventListener("DOMContentLoaded", function () {
         Promise.all([
             fetch(`https://huzairhotelbookingapi.azure-api.net/Hotel/api/GetAllAmenities`, {
                 headers: {
-                    'Authorization': `Bearer ${localStorage.getItem('token')}`,
-                    'Ocp-Apim-Subscription-Key': 'a3c8139fd03b40e7aeb11519eab98f77'
-                }
+                    'Authorization': `Bearer ${localStorage.getItem('token')}`                }
             }).then(response => response.json()),
             fetch(`https://huzairhotelbookingapi.azure-api.net/Hotel/api/GetHotelByID/${hotelId}`, {
                 headers: {
-                    'Authorization': `Bearer ${localStorage.getItem('token')}`,
-                    'Ocp-Apim-Subscription-Key': 'a3c8139fd03b40e7aeb11519eab98f77'
+                    'Authorization': `Bearer ${localStorage.getItem('token')}`
                 }
             }).then(response => response.json())
         ])
@@ -116,8 +113,7 @@ document.addEventListener("DOMContentLoaded", function () {
             method: 'POST',
             headers: {
                 'Authorization': `Bearer ${localStorage.getItem('token')}`,
-                'Content-Type': 'application/json',
-                'Ocp-Apim-Subscription-Key': 'a3c8139fd03b40e7aeb11519eab98f77'
+                'Content-Type': 'application/json'
             },
             body: JSON.stringify(addAmenitiesToHotelDTO)
         })

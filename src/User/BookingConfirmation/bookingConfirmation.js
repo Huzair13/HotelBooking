@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
-            'Ocp-Apim-Subscription-Key': 'a3c8139fd03b40e7aeb11519eab98f77'
+            
         },
     })
         .then(response => {
@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
             headers: {
                 Authorization: `Bearer ${token}`,
                 'Content-Type': 'application/json',
-                'Ocp-Apim-Subscription-Key': 'a3c8139fd03b40e7aeb11519eab98f77'
+                
             }
         })
             .then(response => response.json())
@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 headers: {
                     Authorization: `Bearer ${token}`,
                     'Content-Type': 'application/json',
-                    'Ocp-Apim-Subscription-Key': 'a3c8139fd03b40e7aeb11519eab98f77'
+                    
                 },
                 body: JSON.stringify({
                     reason: reason
@@ -148,7 +148,7 @@ document.addEventListener('DOMContentLoaded', () => {
         method: 'GET',
         headers: {
             'Authorization': `Bearer ${token}`,
-            'Ocp-Apim-Subscription-Key': 'a3c8139fd03b40e7aeb11519eab98f77'
+            
         }
     })
         .then(response => response.json())

@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
-            'Ocp-Apim-Subscription-Key': 'a3c8139fd03b40e7aeb11519eab98f77'
+            
         },
     })
         .then(response => {
@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
         headers: {
             'Authorization': `Bearer ${token}`,
             'Content-Type': 'application/json',
-            'Ocp-Apim-Subscription-Key': 'a3c8139fd03b40e7aeb11519eab98f77'
+            
         }
     })
         .then(response => {
@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
             headers: {
                 Authorization: `Bearer ${token}`,
                 'Content-Type': 'application/json',
-                'Ocp-Apim-Subscription-Key': 'a3c8139fd03b40e7aeb11519eab98f77'
+                
             }
         })
             .then(response => response.json())
@@ -169,7 +169,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 headers: {
                     Authorization: `Bearer ${token}`,
                     'Content-Type': 'application/json',
-                    'Ocp-Apim-Subscription-Key': 'a3c8139fd03b40e7aeb11519eab98f77'
+                    
                 },
                 body: JSON.stringify({
                     reason: reason
@@ -205,7 +205,7 @@ function handleCancelBooking(bookingId) {
         headers: {
             'Authorization': `Bearer ${token}`,
             'Content-Type': 'application/json',
-            'Ocp-Apim-Subscription-Key': 'a3c8139fd03b40e7aeb11519eab98f77'
+            
         }
     })
         .then(response => {
@@ -241,7 +241,7 @@ function cancelBooking(bookingId) {
         headers: {
             'Authorization': `Bearer ${token}`,
             'Content-Type': 'application/json',
-            'Ocp-Apim-Subscription-Key': 'a3c8139fd03b40e7aeb11519eab98f77'
+            
         }
     })
         .then(response => {
@@ -269,7 +269,7 @@ function fetchRefundAmount(bookingId) {
         headers: {
             'Authorization': `Bearer ${token}`,
             'Content-Type': 'application/json',
-            'Ocp-Apim-Subscription-Key': 'a3c8139fd03b40e7aeb11519eab98f77'
+            
         }
     })
         .then(response => {

@@ -9,8 +9,7 @@ async function fetchHotelDetails(hotelId) {
         const fetchOptions = {
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}`,
-                'Ocp-Apim-Subscription-Key': 'a3c8139fd03b40e7aeb11519eab98f77'
+                'Authorization': `Bearer ${token}`
             }
         };
 
@@ -176,8 +175,7 @@ async function deleteHotel(hotelId) {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer ${localStorage.getItem('token')}`,
-                'Ocp-Apim-Subscription-Key': 'a3c8139fd03b40e7aeb11519eab98f77'
+                'Authorization': `Bearer ${localStorage.getItem('token')}`
             },
             body: JSON.stringify(hotelId) 
         })

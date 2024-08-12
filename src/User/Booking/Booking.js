@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 headers: {
                     'Authorization': `Bearer ${token}`,
                     'Content-Type': 'application/json',
-                    'Ocp-Apim-Subscription-Key': 'a3c8139fd03b40e7aeb11519eab98f77'
+                    
                 }
             });
             if (!response.ok) throw new Error('Network response was not ok');
@@ -106,7 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 headers: {
                     'Authorization': `Bearer ${token}`,
                     'Content-Type': 'application/json',
-                    'Ocp-Apim-Subscription-Key': 'a3c8139fd03b40e7aeb11519eab98f77'
+                    
                 }
             });
             if (!response.ok) throw new Error('Network response was not ok');

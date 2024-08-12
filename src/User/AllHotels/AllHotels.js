@@ -32,8 +32,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         const response = await fetch(`https://huzairhotelbookingapi.azure-api.net/IsActive/${localStorage.getItem('userID')}`, {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json',
-                'Ocp-Apim-Subscription-Key': 'a3c8139fd03b40e7aeb11519eab98f77'
+                'Content-Type': 'application/json'
             },
         });
 
@@ -71,8 +70,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const cityDropdown = document.getElementById('cityDropdown');
     fetch('https://huzairhotelbookingapi.azure-api.net/Hotel/api/GetHotelCity', {
         headers: {
-            Authorization: `Bearer ${token}`,
-            'Ocp-Apim-Subscription-Key': 'a3c8139fd03b40e7aeb11519eab98f77'
+            Authorization: `Bearer ${token}`
         }
     })
         .then(response => response.json())
@@ -102,7 +100,6 @@ document.addEventListener('DOMContentLoaded', async () => {
                 headers: {
                     'Authorization': `Bearer ${token}`,
                     'Content-Type': 'application/json',
-                    'Ocp-Apim-Subscription-Key': 'a3c8139fd03b40e7aeb11519eab98f77'
                 }
             });
             if (!response.ok) throw new Error('Network response was not ok');
@@ -121,8 +118,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             const response = await fetch('https://huzairhotelbookingapi.azure-api.net/Hotel/api/GetAllAmenities', {
                 headers: {
                     'Content-Type': 'application/json',
-                    Authorization: `Bearer ${getBearerToken()}`,
-                    'Ocp-Apim-Subscription-Key': 'a3c8139fd03b40e7aeb11519eab98f77'
+                    Authorization: `Bearer ${getBearerToken()}`
                 }
             });
             if (!response.ok) throw new Error('Network response was not ok');
@@ -141,7 +137,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 headers: {
                     'Content-Type': 'application/json',
                     Authorization: `Bearer ${getBearerToken()}`,
-                    'Ocp-Apim-Subscription-Key': 'a3c8139fd03b40e7aeb11519eab98f77'
+                    
                 }
             });
             if (!response.ok) throw new Error('Network response was not ok');
@@ -280,7 +276,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             headers: {
                 Authorization: `Bearer ${token}`,
                 'Content-Type': 'application/json',
-                'Ocp-Apim-Subscription-Key': 'a3c8139fd03b40e7aeb11519eab98f77'
+                
             }
         })
         .then(response => response.json())
@@ -341,7 +337,6 @@ document.addEventListener('DOMContentLoaded', async () => {
                 method: 'POST',
                 headers: {
                     Authorization: `Bearer ${token}`,
-                    'Ocp-Apim-Subscription-Key': 'a3c8139fd03b40e7aeb11519eab98f77',
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({

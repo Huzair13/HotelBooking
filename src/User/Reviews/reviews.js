@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
-            'Ocp-Apim-Subscription-Key': 'a3c8139fd03b40e7aeb11519eab98f77'
+            
         },
     })
         .then(response => {
@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
             headers: {
                 Authorization: `Bearer ${token}`,
                 'Content-Type': 'application/json',
-                'Ocp-Apim-Subscription-Key': 'a3c8139fd03b40e7aeb11519eab98f77'
+                
             }
         })
         .then(response => response.json())
@@ -116,7 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 headers: {
                     Authorization: `Bearer ${token}`,
                     'Content-Type': 'application/json',
-                    'Ocp-Apim-Subscription-Key': 'a3c8139fd03b40e7aeb11519eab98f77'
+                    
                 },
                 body: JSON.stringify({
                     reason: reason
@@ -193,7 +193,7 @@ async function fetchReviews(hotelId, sortOption = 'latest') {
         const response = await fetch(`https://huzairhotelbookingapi.azure-api.net/Rating/api/GetRatingByHotelID/${hotelId}`,{
             headers : {
                 Authorization : `Bearer ${localStorage.getItem('token')}`,
-                'Ocp-Apim-Subscription-Key': 'a3c8139fd03b40e7aeb11519eab98f77'
+                
             }
         });
         let reviews = await response.json();

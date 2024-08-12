@@ -39,8 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
         fetch(`https://huzairhotelbookingapi.azure-api.net/Hotel/api/GetRoomsByHotelID/${hotelId}`, {
             method: 'POST',
             headers: {
-                'Authorization': `Bearer ${localStorage.getItem('token')}`,
-                'Ocp-Apim-Subscription-Key': 'a3c8139fd03b40e7aeb11519eab98f77'
+                'Authorization': `Bearer ${localStorage.getItem('token')}`
             }
         })
             .then(response => {
@@ -109,8 +108,7 @@ container.innerHTML = tableHtml;
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer ${localStorage.getItem('token')}`,
-                'Ocp-Apim-Subscription-Key': 'a3c8139fd03b40e7aeb11519eab98f77'
+                'Authorization': `Bearer ${localStorage.getItem('token')}`
             },
             body: JSON.stringify({
                 hotelId : parseInt(hotelId),

@@ -52,8 +52,7 @@ $(document).ready(function () {
         $.ajax({
             url: `https://huzairhotelbookingapi.azure-api.net/Hotel/api/AddImagesToHotel/${hotelId}`,
             headers :{
-                Authorization : `Bearer ${localStorage.getItem('token')}`,
-                'Ocp-Apim-Subscription-Key': 'a3c8139fd03b40e7aeb11519eab98f77'
+                Authorization : `Bearer ${localStorage.getItem('token')}`
             },
             type: 'POST',
             data: formData,

@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'Ocp-Apim-Subscription-Key': 'a3c8139fd03b40e7aeb11519eab98f77'
+                
             },
         });
 
@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 headers: {
                     'Authorization': `Bearer ${token}`,
                     'Content-Type': 'application/json',
-                    'Ocp-Apim-Subscription-Key': 'a3c8139fd03b40e7aeb11519eab98f77'
+                    
                 }
             });
             if (!response.ok) throw new Error('Network response was not ok');
@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 headers: {
                     'Content-Type': 'application/json',
                     Authorization: `Bearer ${getBearerToken()}`,
-                    'Ocp-Apim-Subscription-Key': 'a3c8139fd03b40e7aeb11519eab98f77'
+                    
                 }
             });
             if (!response.ok) throw new Error('Network response was not ok');
@@ -137,7 +137,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             headers: {
                 Authorization: `Bearer ${token}`,
                 'Content-Type': 'application/json',
-                'Ocp-Apim-Subscription-Key': 'a3c8139fd03b40e7aeb11519eab98f77'
+                
             }
         })
         .then(response => response.json())
@@ -197,7 +197,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 headers: {
                     Authorization: `Bearer ${token}`,
                     'Content-Type': 'application/json',
-                    'Ocp-Apim-Subscription-Key': 'a3c8139fd03b40e7aeb11519eab98f77'
+                    
                 },
                 body: JSON.stringify({
                     reason: reason
@@ -430,8 +430,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             const response = await fetch('https://huzairhotelbookingapi.azure-api.net/Hotel/api/GetAllRooms', {
                 headers: {
                     'Content-Type': 'application/json',
-                    Authorization: `Bearer ${getBearerToken()}`,
-                    'Ocp-Apim-Subscription-Key': 'a3c8139fd03b40e7aeb11519eab98f77'
+                    Authorization: `Bearer ${getBearerToken()}`
                 }
             });
             if (!response.ok) throw new Error('Network response was not ok');

@@ -12,8 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const response = await fetch('https://huzairhotelbookingapi.azure-api.net/Hotel/api/GetAllHotels', {
                 headers: {
                     'Authorization': `Bearer ${token}`,
-                    'Content-Type': 'application/json',
-                    'Ocp-Apim-Subscription-Key': 'a3c8139fd03b40e7aeb11519eab98f77'
+                    'Content-Type': 'application/json'
                 }
             });
             if (!response.ok) throw new Error('Network response was not ok');

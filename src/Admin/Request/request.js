@@ -56,8 +56,7 @@ function fetchRequests(status) {
         method: 'GET',
         headers: {
             'Authorization': `Bearer ${localStorage.getItem('token')}`,
-            'Content-Type': 'application/json',
-            'Ocp-Apim-Subscription-Key': 'a3c8139fd03b40e7aeb11519eab98f77'
+            'Content-Type': 'application/json'
         }
     })
         .then(response => {
@@ -130,8 +129,7 @@ function handleRequest(endpoint) {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json',
-            'Authorization': `Bearer ${localStorage.getItem('token')}`,
-            'Ocp-Apim-Subscription-Key': 'a3c8139fd03b40e7aeb11519eab98f77'
+            'Authorization': `Bearer ${localStorage.getItem('token')}`
         }
     })
         .then(response => {

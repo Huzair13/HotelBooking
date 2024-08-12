@@ -14,8 +14,7 @@ document.getElementById('hotelForm').addEventListener('submit', async function (
         const response = await fetch('https://huzairhotelbookingapi.azure-api.net/Hotel/api/AddHotel', {
             method: 'POST',
             headers: {
-                Authorization: `Bearer ${localStorage.getItem('token')}`,
-                'Ocp-Apim-Subscription-Key': 'a3c8139fd03b40e7aeb11519eab98f77'
+                Authorization: `Bearer ${localStorage.getItem('token')}`
             },
             body: formData
         });

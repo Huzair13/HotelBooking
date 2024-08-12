@@ -35,8 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
         fetch(`https://huzairhotelbookingapi.azure-api.net/Hotel/api/GetHotelByID/${hotelId}`, {
             headers: {
                 'Content-Type': 'application/json',
-                Authorization: `Bearer ${token}`,
-                'Ocp-Apim-Subscription-Key': 'a3c8139fd03b40e7aeb11519eab98f77'
+                Authorization: `Bearer ${token}`
             }
         })
             .then(response => response.json())
@@ -73,8 +72,7 @@ document.addEventListener('DOMContentLoaded', function () {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}`,
-                'Ocp-Apim-Subscription-Key': 'a3c8139fd03b40e7aeb11519eab98f77'
+                'Authorization': `Bearer ${token}`
             },
             body: JSON.stringify(sendData)
         })

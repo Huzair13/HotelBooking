@@ -57,8 +57,7 @@
             fetch('https://huzairhotelbookingapi.azure-api.net/Login', {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json',
-                    'Ocp-Apim-Subscription-Key': 'a3c8139fd03b40e7aeb11519eab98f77'
+                    'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({
                     userId: txtUid,

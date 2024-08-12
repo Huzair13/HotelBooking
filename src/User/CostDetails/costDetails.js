@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
-            'Ocp-Apim-Subscription-Key': 'a3c8139fd03b40e7aeb11519eab98f77'
+            
         },
     })
         .then(response => {
@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
             headers: {
                 Authorization: `Bearer ${token}`,
                 'Content-Type': 'application/json',
-                'Ocp-Apim-Subscription-Key': 'a3c8139fd03b40e7aeb11519eab98f77'
+                
             }
         })
         .then(response => response.json())
@@ -178,7 +178,7 @@ fetch('https://huzairhotelbookingapi.azure-api.net/Booking/api/CalculateTotalAmo
     headers: {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${token}`,
-        'Ocp-Apim-Subscription-Key': 'a3c8139fd03b40e7aeb11519eab98f77'
+        
     },
     body: JSON.stringify({
         hotelId: parseInt(hotelId),
